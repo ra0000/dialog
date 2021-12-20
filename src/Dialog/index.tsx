@@ -47,6 +47,10 @@ export default function Dialog(props: IDialogChildProps) {
     maskClosable = true,
     maskStyle,
     maskProps,
+
+
+    // Custom
+    id,
   } = props;
 
   const lastOutSideActiveElementRef = useRef<HTMLElement>();
@@ -183,6 +187,7 @@ export default function Dialog(props: IDialogChildProps) {
         role="dialog"
         aria-labelledby={title ? ariaIdRef.current : null}
         style={{ zIndex, ...wrapStyle, display: !animatedVisible ? 'none' : null }}
+        id={id ? id : null}
         {...wrapProps}
       >
         <Content
